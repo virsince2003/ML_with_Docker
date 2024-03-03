@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Note Authenticator</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <div class="container">
+       
+    <h1>Bank Note Authenticator</h1>
+    <form action="/predict" method="get">
+      <label for="variance">Variance:</label>
+      <input type="number" id="variance" name="variance" step="0.01" required><br>
+      <label for="skewness">Skewness:</label>
+      <input type="number" id="skewness" name="skewness" step="0.01" required><br>
+      <label for="curtosis">Curtosis:</label>
+      <input type="number" id="curtosis" name="curtosis" step="0.01" required><br>
+      <label for="entropy">Entropy:</label>
+      <input type="number" id="entropy" name="entropy" step="0.01" required><br>
+      <input type="submit" value="Predict">
+    </form>
+
+    <h2>Upload CSV File</h2>
+    <form action="/test" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".csv" required />
+      <input type="submit" value="Upload" />
+    </form>
+  </div>
+</body>
+</html>
